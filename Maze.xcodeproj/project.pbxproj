@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		710DBB152ADA2B4C001ED080 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 710DBB142ADA2B4C001ED080 /* main.cpp */; };
+		710DBB1D2ADA2CA8001ED080 /* mazio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 710DBB1B2ADA2CA8001ED080 /* mazio.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		710DBB112ADA2B4C001ED080 /* Maze */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Maze; sourceTree = BUILT_PRODUCTS_DIR; };
 		710DBB142ADA2B4C001ED080 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		710DBB1B2ADA2CA8001ED080 /* mazio.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mazio.cpp; sourceTree = "<group>"; };
+		710DBB1C2ADA2CA8001ED080 /* mazio.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mazio.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				710DBB142ADA2B4C001ED080 /* main.cpp */,
+				710DBB1B2ADA2CA8001ED080 /* mazio.cpp */,
+				710DBB1C2ADA2CA8001ED080 /* mazio.hpp */,
 			);
 			path = Maze;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				710DBB1D2ADA2CA8001ED080 /* mazio.cpp in Sources */,
 				710DBB152ADA2B4C001ED080 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
