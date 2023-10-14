@@ -3,7 +3,7 @@ maze.cpp
 */
 
 #include <iostream>
-#include "mazeio.h"
+#include "mazio.hpp"
 // #include "queue.h"
 
 using namespace std;
