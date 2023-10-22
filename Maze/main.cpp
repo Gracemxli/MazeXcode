@@ -29,7 +29,7 @@ int main(int argc, char* argv[]) {
     }
 
     mymaze = read_maze(argv[1], &rows, &cols); // <---TASK: COMPLETE THIS FOR CHECKPOINT 1
-
+    // Test
     // For checkpoint 2 you should check the validity of the maze
     // You may do so anywhere you please and can abstract that
     // operation with a function or however you like.

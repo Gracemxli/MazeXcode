@@ -1,6 +1,6 @@
 /*
-mazeio.cpp
-*/
+ mazeio.cpp
+ */
 
 #include <iostream>
 #include <fstream>
@@ -31,24 +31,33 @@ using namespace std;
  *************************************************/
 char** read_maze(char* filename, int* rows, int* cols)
 {
-
+    
     // *** You complete **** CHECKPOINT 1
     int row, col;
-        // *** You complete **** CHECKPOINT 1
-      ifstream ifile(filename);
-
-      if( ifile.fail() ){ // able to open file?
-          return NULL;
-        }
-        ifile >> row >>col;
-      if ( ifile.fail() ){
+    // *** You complete **** CHECKPOINT 1
+    ifstream ifile(filename);
+    
+    if( ifile.fail() ){ // able to open file?
         return NULL;
-        }
-        rows=&row;
-      ifile.close();
-
-
-
+    }
+    ifile >> row >> col;
+    if ( ifile.fail() ){
+        return NULL;
+    }
+    //rows=&row;
+    *rows=row;
+    *cols=col;
+    
+    char** array = new char*[row];
+    for(int i = 0; i<row; i++){
+        array[i]=new char[col+1];
+    }
+    
+    ifile.getline(array[0], col+1);
+    ifile.getline(array[0], col+1); cout << array[0] << endl;
+    ifile.getline(array[0], col+1); cout << array[0] << endl;
+    // exp .S.#.
+    ifile.close();
 
     return NULL;
 }
@@ -60,15 +69,15 @@ char** read_maze(char* filename, int* rows, int* cols)
  *************************************************/
 void print_maze(char** maze, int rows, int cols)
 {
-
+    
     // *** You complete **** CHECKPOINT 1
-
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
 }
 

@@ -28,6 +28,7 @@
 		710DBB142ADA2B4C001ED080 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		710DBB1B2ADA2CA8001ED080 /* mazio.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mazio.cpp; sourceTree = "<group>"; };
 		710DBB1C2ADA2CA8001ED080 /* mazio.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mazio.hpp; sourceTree = "<group>"; };
+		71CBB9962AE4E399001BCB8C /* Maze */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Maze; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				710DBB132ADA2B4C001ED080 /* Maze */,
+				71CBB9962AE4E399001BCB8C /* Maze */,
 				710DBB122ADA2B4C001ED080 /* Products */,
 			);
 			sourceTree = "<group>";
