@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		710DBB152ADA2B4C001ED080 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 710DBB142ADA2B4C001ED080 /* main.cpp */; };
 		710DBB1D2ADA2CA8001ED080 /* mazio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 710DBB1B2ADA2CA8001ED080 /* mazio.cpp */; };
+		71CBB9982AE5BE79001BCB8C /* queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71CBB9972AE5BE79001BCB8C /* queue.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		710DBB1B2ADA2CA8001ED080 /* mazio.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mazio.cpp; sourceTree = "<group>"; };
 		710DBB1C2ADA2CA8001ED080 /* mazio.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mazio.hpp; sourceTree = "<group>"; };
 		71CBB9962AE4E399001BCB8C /* Maze */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Maze; sourceTree = "<group>"; };
+		71CBB9972AE5BE79001BCB8C /* queue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = queue.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				710DBB142ADA2B4C001ED080 /* main.cpp */,
 				710DBB1B2ADA2CA8001ED080 /* mazio.cpp */,
 				710DBB1C2ADA2CA8001ED080 /* mazio.hpp */,
+				71CBB9972AE5BE79001BCB8C /* queue.cpp */,
 			);
 			path = Maze;
 			sourceTree = "<group>";
@@ -128,6 +131,7 @@
 			files = (
 				710DBB1D2ADA2CA8001ED080 /* mazio.cpp in Sources */,
 				710DBB152ADA2B4C001ED080 /* main.cpp in Sources */,
+				71CBB9982AE5BE79001BCB8C /* queue.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
