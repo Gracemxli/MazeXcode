@@ -4,7 +4,7 @@ mazeio.cpp
 
 #include <iostream>
 #include <fstream>
-#include "mazeio.h"
+#include "mazio.hpp"
 
 using namespace std;
 
@@ -33,12 +33,24 @@ char** read_maze(char* filename, int* rows, int* cols)
 {
 
     // *** You complete **** CHECKPOINT 1
+    int row, col;
+        // *** You complete **** CHECKPOINT 1
+      ifstream ifile(filename);
+
+      if( ifile.fail() ){ // able to open file?
+          return NULL;
+        }
+        ifile >> row >>col;
+      if ( ifile.fail() ){
+        return NULL;
+        }
+        rows=&row;
+      ifile.close();
 
 
 
 
-
-
+    return NULL;
 }
 
 /*************************************************

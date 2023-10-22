@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    mymaze = read_maze... // <---TASK: COMPLETE THIS FOR CHECKPOINT 1
+    mymaze = read_maze(argv[1], &rows, &cols); // <---TASK: COMPLETE THIS FOR CHECKPOINT 1
 
     // For checkpoint 2 you should check the validity of the maze
     // You may do so anywhere you please and can abstract that
