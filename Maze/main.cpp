@@ -36,19 +36,19 @@ int mainX(int argc, char* argv[]) {
     return 0;
 }
 
-void maze_print(char** maze, Location* pred, int* visited, int rows, int cols) {
-    for (int r=0, i=0; r<rows; r++) {
-        for (int c=0; c<cols; c++, i++) {
-            cout << maze[r][c];
-            if (pred[i].row<0) { cout<<"-:-"; }
-            else { cout << pred[i].row << ":" << pred[i].col; }
-            if (visited[i]) { cout<<"*"; }
-            else { cout << " "; }
-        }  cout << endl;
-    }
-    cout << endl;
-}
-
+//void maze_print(char** maze, Location* pred, int* visited, int rows, int cols) {
+//    for (int r=0, i=0; r<rows; r++) {
+//        for (int c=0; c<cols; c++, i++) {
+//            cout << maze[r][c];
+//            if (pred[i].row<0) { cout<<"-:-"; }
+//            else { cout << pred[i].row << ":" << pred[i].col; }
+//            if (visited[i]) { cout<<"*"; }
+//            else { cout << " "; }
+//        }  cout << endl;
+//    }
+//    cout << endl;
+//}
+//
 
 
 // main function to read, solve maze, and print result
@@ -70,14 +70,23 @@ int main(int argc, char* argv[]) {
     // For checkpoint 2 you should check the validity of the maze
     // You may do so anywhere you please and can abstract that
     // operation with a function or however you like.
-
+    if(mymaze==NULL){
+        cout << invalid_maze_message << endl;
+        return -1; 
+    }
 
 
     //================================
     // When working on Checkpoint 4, you will need to call maze_search
     // and output the appropriate message or, if successful, print
     // the maze.  But for Checkpoint 1, we print the maze, regardless.
-    maze_search(mymaze, rows, cols);
+     result = maze_search(mymaze, rows, cols);
+        if(result==-1)
+            cout << invalid_char_message <<endl;
+        else if(result == -2)
+            cout << invalid_maze_message << endl;
+        else if(result == 0)
+            cout << no_path_message << endl;
     print_maze(mymaze, rows, cols);
     
 
@@ -136,7 +145,7 @@ int maze_search(char** maze, int rows, int cols)
     }
     
     if(scount!=1||fcount!=1){
-        return -1;
+        return -2;
     }
     
     Queue q(rows*cols);
@@ -229,13 +238,13 @@ int maze_search(char** maze, int rows, int cols)
                 }
             }
         }
-        maze_print(maze, pred, visited, rows, cols);
+       // maze_print(maze, pred, visited, rows, cols);
     }
     int result= 0;
 
     if (pred[fLoc.row*cols+fLoc.col].row!=-1) {
         Location prev = pred[fLoc.row*cols+fLoc.col];
-        while(prev.row!=sLoc.row&&prev.col!=sLoc.col){
+        while(!(prev.row==sLoc.row&&prev.col==sLoc.col)){
             // '*'
             maze[prev.row][prev.col]='*';
             prev=pred[prev.row*cols+prev.col];
