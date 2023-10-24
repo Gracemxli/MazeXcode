@@ -36,6 +36,20 @@ int mainX(int argc, char* argv[]) {
     return 0;
 }
 
+void maze_print(char** maze, Location* pred, int* visited, int rows, int cols) {
+    for (int r=0, i=0; r<rows; r++) {
+        for (int c=0; c<cols; c++, i++) {
+            cout << maze[r][c];
+            if (pred[i].row<0) { cout<<"-:-"; }
+            else { cout << pred[i].row << ":" << pred[i].col; }
+            if (visited[i]) { cout<<"*"; }
+            else { cout << " "; }
+        }  cout << endl;
+    }
+    cout << endl;
+}
+
+
 
 // main function to read, solve maze, and print result
 int main(int argc, char* argv[]) {
@@ -157,6 +171,8 @@ int maze_search(char** maze, int rows, int cols)
 
     while(!q.is_empty()){
         Location loc = q.remove_from_front();
+        visited[(loc.row)*cols+loc.col]= 1;
+        //mark as visited
         // N
         if(loc.row!=0){
             Location north = loc; north.row--;
@@ -213,6 +229,7 @@ int maze_search(char** maze, int rows, int cols)
                 }
             }
         }
+        maze_print(maze, pred, visited, rows, cols);
     }
     int result= 0;
 
