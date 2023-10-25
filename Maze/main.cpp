@@ -35,7 +35,7 @@ int mainX(int argc, char* argv[]) {
    cout << q.is_empty() << endl;           // true
     return 0;
 }
-
+//
 //void maze_print(char** maze, Location* pred, int* visited, int rows, int cols) {
 //    for (int r=0, i=0; r<rows; r++) {
 //        for (int c=0; c<cols; c++, i++) {
@@ -48,7 +48,7 @@ int mainX(int argc, char* argv[]) {
 //    }
 //    cout << endl;
 //}
-//
+
 
 
 // main function to read, solve maze, and print result
@@ -180,7 +180,6 @@ int maze_search(char** maze, int rows, int cols)
 
     while(!q.is_empty()){
         Location loc = q.remove_from_front();
-        visited[(loc.row)*cols+loc.col]= 1;
         //mark as visited
         // N
         if(loc.row!=0){
@@ -191,6 +190,7 @@ int maze_search(char** maze, int rows, int cols)
                 pred[north.row*cols+north.col]=loc;
                 if(find=='.') {
                     q.add_to_back(north);
+                    visited[(north.row)*cols+north.col]= 1;
                 } else if(find=='F'){
                     break;
                 }
@@ -205,6 +205,7 @@ int maze_search(char** maze, int rows, int cols)
                 pred[west.row*cols+west.col]=loc;
                 if(find=='.') {
                     q.add_to_back(west);
+                    visited[(west.row)*cols+west.col]= 1;
                 } else if(find=='F'){
                     break;
                 }
@@ -219,6 +220,7 @@ int maze_search(char** maze, int rows, int cols)
                 pred[south.row*cols+south.col]=loc;
                 if(find=='.') {
                     q.add_to_back(south);
+                    visited[(south.row)*cols+south.col]= 1;
                 } else if(find=='F'){
                     break;
                 }
@@ -233,15 +235,17 @@ int maze_search(char** maze, int rows, int cols)
                 pred[east.row*cols+east.col]=loc;
                 if(find=='.') {
                     q.add_to_back(east);
+                    visited[(east.row)*cols+east.col]= 1;
                 } else if(find=='F'){
                     break;
                 }
             }
         }
-       // maze_print(maze, pred, visited, rows, cols);
+//       maze_print(maze, pred, visited, rows, cols);
     }
     int result= 0;
 
+//    maze_print(maze, pred, visited, rows, cols);
     if (pred[fLoc.row*cols+fLoc.col].row!=-1) {
         Location prev = pred[fLoc.row*cols+fLoc.col];
         while(!(prev.row==sLoc.row&&prev.col==sLoc.col)){

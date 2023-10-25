@@ -49,8 +49,18 @@ char** read_maze(char* filename, int* rows, int* cols)
     *cols=col;
     
     char** array = new char*[row];
-    char buf[col+1];
-    // skip the empty line
+    string buf;
+    for(int i = 0; i<row; i++){
+        array[i]=new char[col+1];
+        ifile >> buf;
+        strncpy(array[i], buf.c_str(), col);
+        array[i][col]='\0';
+    }
+    //char buf[col+1];
+    //while (ifile >> buf) {
+    //  cout << buf << endl;
+    //}
+    /* skip the empty line
     ifile.getline(buf, col+1);
     if (buf[0]!='\0') {
         cout << "Bug?\n";
@@ -58,7 +68,8 @@ char** read_maze(char* filename, int* rows, int* cols)
     for(int i = 0; i<row; i++){
         array[i]=new char[col+1];
         ifile.getline(array[i], col+1);
-    }
+        cout << "Got: " << strlen(array[i]) << array[i] << endl;
+    }*/
 
     ifile.close();
 
@@ -74,7 +85,8 @@ void print_maze(char** maze, int rows, int cols)
 {
     
     // *** You complete **** CHECKPOINT 1
-    
+    cout << rows << " " <<cols<<endl;
+
     for(int i = 0; i<rows; i++){
         cout << maze[i] << endl;
     }
